@@ -15,7 +15,7 @@ def plot3d(func,min, max):
 
 def plot_curve(X, Y):
 	fig = plt.figure()
-	plt.plot(X, Y, 'b*')
+	#plt.plot(X, Y, 'b*')
 	plt.plot(X, Y, 'r')
 	plt.show()
 
