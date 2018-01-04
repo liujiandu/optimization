@@ -12,3 +12,9 @@ def gfunc(x):
 
 def hessian(x):
 	return np.mat(np.eye(2))
+
+if __name__=="__main__":
+        import sys
+        sys.path.append('../')
+        from tool.plot import plot3d
+        plot3d(func, np.array([-5.0, -5.0]), np.array([5.0, 5.0]))

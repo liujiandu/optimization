@@ -7,4 +7,8 @@ def gfunc(x):
 	return (func(x+0.001)-func(x))/0.001
 
 if __name__ == "__main__":
-	print func(np.array([8.05502, 9.66459]))
+        import sys
+        sys.path.append('../')
+        from tool.plot import plot3d
+        plot3d(func, np.array([-5.0, 5.0]), np.array([5.12, 5.12]))
+	#print func(np.array([8.05502, 9.66459]))

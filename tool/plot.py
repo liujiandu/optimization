@@ -27,8 +27,6 @@ def plot_surface_curve(func,min, max, x, y,z):
 	X, Y = np.meshgrid(X, Y)
 	Z = func(np.array([X,Y]))
 	ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='rainbow')
-
-
 	ax.plot(x, y, z, 'b*')
 	ax.plot(x, y, z, 'r')
 

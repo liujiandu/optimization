@@ -9,4 +9,9 @@ def gfunc(x):
 
 
 if __name__ == "__main__":
-	print func(np.array([512.0,404.2319]))
+        import sys
+        sys.path.append('../')
+        from tool.plot import plot3d
+        #print func(np.array([512.0,404.2319]))
+        plot3d(func, np.array([-10, -10]), np.array([10, 10]))
+
