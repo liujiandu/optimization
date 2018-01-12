@@ -19,7 +19,9 @@ def plt_gp(bo, x, y):
     axis = plt.subplot(gs[0])
     acq = plt.subplot(gs[1])
 
-    mu, sigma = posterior(bo, x)
+    bo.gp.fit(bo.X, bo.Y) 
+    mu, sigma = bo.gp.predict(x, return_std=True)
+    
     axis.plot(x, y, linewidth=3, label='Target')
     axis.plot(bo.X.flatten(), bo.Y, 'D', markersize=8, color='r', label='Observation')
     axis.plot(x, mu, '--', color='k', label='Prediction')
@@ -34,7 +36,6 @@ def plt_gp(bo, x, y):
 def main():
     bo = BayesianOptimization(target, {'x':(-5,10)})
     bo.maximize(init_points=2, n_iter=10, acq='ucb', kappa=5)
-    
     x = np.linspace(-5, 10, 200).reshape(-1,1)
     y = target(x)
     plt_gp(bo, x, y)
